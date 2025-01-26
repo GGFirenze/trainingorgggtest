@@ -4,8 +4,17 @@
 </script>
 <script>
 window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
-window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {"fetchRemoteConfig":true,"autocapture":true});
-</script>
+window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
+  "fetchRemoteConfig": true,
+  "autocapture": {
+    attribution: true,
+    pageViews: true,
+    sessions: true,
+    fileDownload: true,
+    formInteractions: true,
+    elementInteractions: false
+  }
+});
 <head>
 	<link rel="shortcut icon" type="x-icon" href="Train-IT logo(1).png">
 	<meta charset="utf-8">
