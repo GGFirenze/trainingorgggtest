@@ -5,8 +5,8 @@ window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
 window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
   "fetchRemoteConfig": true,
   "autocapture": false
-  }
 });
+		
 </script>
 <head>
 	<link rel="shortcut icon" type="x-icon" href="Train-IT logo(1).png">
@@ -50,8 +50,8 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
 	</section>
 <script type="text/javascript">
 
-	var homepageLogo = document.getElementById('homepage');
-  homepageLogo.addEventListener('click', function(event) {
+	var home = document.getElementById('homepage');
+  home.addEventListener('click', function(event) {
     amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
        var eventProperties = {
       button_name: "home",
@@ -61,8 +61,8 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
           amplitude.track('Nav Button Clicked', eventProperties);
     });
 
-	var homepageLogo = document.getElementById('services');
-  homepageLogo.addEventListener('click', function(event) {
+	var services = document.getElementById('services');
+  services.addEventListener('click', function(event) {
     amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
        var eventProperties = {
       button_name: "services",
@@ -71,8 +71,8 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
 
           amplitude.track('Nav Button Clicked', eventProperties);
     });
-	 var homepageLogo = document.getElementById('courses');
-  homepageLogo.addEventListener('click', function(event) {
+	 var courses = document.getElementById('courses');
+  courses.addEventListener('click', function(event) {
     amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
        var eventProperties = {
       button_name: "courses",
@@ -80,8 +80,8 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
     };
 	            amplitude.track('Nav Button Clicked', eventProperties);
     });
-	   var homepageLogo = document.getElementById('about');
-  homepageLogo.addEventListener('click', function(event) {
+	   var about = document.getElementById('about');
+  about.addEventListener('click', function(event) {
     amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
        var eventProperties = {
       button_name: "about",
@@ -89,8 +89,8 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
     };
           amplitude.track('Nav Button Clicked', eventProperties);
     });
-		   var homepageLogo = document.getElementById('contacts');
-  homepageLogo.addEventListener('click', function(event) {
+		   var contacts = document.getElementById('contacts');
+  contacts.addEventListener('click', function(event) {
     amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
        var eventProperties = {
       button_name: "contacts",
@@ -98,8 +98,8 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
     };
           amplitude.track('Nav Button Clicked', eventProperties);
     });
-		   var homepageLogo = document.getElementById('hero-btnn');
-  homepageLogo.addEventListener('click', function(event) {
+		   var herobtnn = document.getElementById('hero-btnn');
+  herobtnn.addEventListener('click', function(event) {
     amplitude.getInstance().logEvent('Explore Services Button Clicked', {debug: true})
        var eventProperties = {
       button_name: "hero_btn",
