@@ -27,11 +27,11 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
 		<a href="/Users/giuliano.giannini/Desktop/Projects/Training Azienda/trainingorg.html" id="logo"><img src="Train-IT logo(1).png" alt="Logo Azienda"></a>
 		<div class="nav-links">
                 <ul>
-                    <li id="homepage"><a href="#home">Home</a></li>
-                    <li id="services"><a href="#servizi">Services</a></li>
-                    <li id="courses"><a href="#corsi">Courses</a></li>
-                    <li id="about"><a href="#chi-siamo">About</a></li>
-                    <li id="contacts"><a href="#contatti">Contacts</a></li>
+                    <li><a href="#home" id="homepage">Home</a></li>
+                    <li ><a href="#servizi" id="services">Services</a></li>
+                    <li ><a href="#corsi" id="courses">Courses</a></li>
+                    <li ><a href="#chi-siamo" id="about">About</a></li>
+                    <li ><a href="#contatti" id="contacts">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -40,7 +40,7 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
         	<h2>Adopting new technology is as vital to the business as it is scary for your employees. Fear no more and leverage highly tailored Technical Training to increase adoption from the get go.</h2>
         	<br>
         	<h2>Take action now and find out how we help businesses in an ever-changing Tech world keep their employees up to date with their latest software acquisitions.</h2>
-        	<a href="#servizi" class="hero-btn" id="hero-btn">Explore our services!</a>
+        	<a href="#servizi" class="hero-btn" id="hero-btnn">Explore our services!</a>
         </div>
 	</section>
 	<section class="servizi">
@@ -98,7 +98,7 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
     };
           amplitude.track('Nav Button Clicked', eventProperties);
     });
-		   var homepageLogo = document.getElementById('hero-btn');
+		   var homepageLogo = document.getElementById('hero-btnn');
   homepageLogo.addEventListener('click', function(event) {
     amplitude.getInstance().logEvent('Explore Services Button Clicked', {debug: true})
        var eventProperties = {
