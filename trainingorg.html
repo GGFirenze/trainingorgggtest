@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://cdn.amplitude.com/script/ac6a9dc272fbddd15a96074e49112638.js"></script>
+        <script src="https://cdn.amplitude.com/script/ac6a9dc272fbddd15a96074e49112638.js"></script>
+	<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.12.1-min.js.gz"></script>
     <script>
+	var sessionReplayTracking = window.sessionReplay.plugin({sampleRate: 1});
+        window.amplitude.add(sessionReplayTracking);
         window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
             fetchRemoteConfig: true,
             autocapture: {
@@ -14,8 +17,8 @@
 		    elementInteractions: false
 	    },
         });
-        window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
     </script>
+	
     <link rel="shortcut icon" type="x-icon" href="Train-IT logo(1).png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
