@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<script>
-window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
+<head>
+<script src="https://cdn.amplitude.com/script/ac6a9dc272fbddd15a96074e49112638.js"></script>
+<script>
 window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
-  "fetchRemoteConfig": false,
+  "fetchRemoteConfig": true,
   "autocapture": false
 });
-		
+window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
 </script>
-<head>
 	<link rel="shortcut icon" type="x-icon" href="Train-IT logo(1).png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,64 +49,25 @@ window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
 	</div>
 	</section>
 <script type="text/javascript">
+        function logNavButtonClick(buttonName) {
+            amplitude.track('Nav Button Clicked', {
+                button_name: buttonName,
+                source: "homepage"
+            });
+        }
 
-	var home = document.getElementById('homepage');
-  home.addEventListener('click', function(event) {
-    amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
-       var eventProperties = {
-      button_name: "home",
-	source: "homepage"
-    };
+        document.getElementById('homepage').addEventListener('click', () => logNavButtonClick("home"));
+        document.getElementById('services').addEventListener('click', () => logNavButtonClick("services"));
+        document.getElementById('courses').addEventListener('click', () => logNavButtonClick("courses"));
+        document.getElementById('about').addEventListener('click', () => logNavButtonClick("about"));
+        document.getElementById('contacts').addEventListener('click', () => logNavButtonClick("contacts"));
 
-          amplitude.track('Nav Button Clicked', eventProperties);
-    });
-
-	var services = document.getElementById('services');
-  services.addEventListener('click', function(event) {
-    amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
-       var eventProperties = {
-      button_name: "services",
-	source: "homepage"
-    };
-
-          amplitude.track('Nav Button Clicked', eventProperties);
-    });
-	 var courses = document.getElementById('courses');
-  courses.addEventListener('click', function(event) {
-    amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
-       var eventProperties = {
-      button_name: "courses",
-	source: "homepage"
-    };
-	            amplitude.track('Nav Button Clicked', eventProperties);
-    });
-	   var about = document.getElementById('about');
-  about.addEventListener('click', function(event) {
-    amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
-       var eventProperties = {
-      button_name: "about",
-	source: "homepage"
-    };
-          amplitude.track('Nav Button Clicked', eventProperties);
-    });
-		   var contacts = document.getElementById('contacts');
-  contacts.addEventListener('click', function(event) {
-    amplitude.getInstance().logEvent('Nav Button Clicked', {debug: true})
-       var eventProperties = {
-      button_name: "contacts",
-	source: "homepage"
-    };
-          amplitude.track('Nav Button Clicked', eventProperties);
-    });
-		   var herobtnn = document.getElementById('hero-btnn');
-  herobtnn.addEventListener('click', function(event) {
-    amplitude.getInstance().logEvent('Explore Services Button Clicked', {debug: true})
-       var eventProperties = {
-      button_name: "hero_btn",
-	source: "homepage"
-    };
-          amplitude.track('Explore Services Button Clicked', eventProperties);
-    });
-  </script>
+        document.getElementById('hero-btnn').addEventListener('click', function(event) {
+            amplitude.track('Explore Services Button Clicked', {
+                button_name: "hero_btn",
+                source: "homepage"
+            });
+        });
+    </script>
 </body>
 </html>
