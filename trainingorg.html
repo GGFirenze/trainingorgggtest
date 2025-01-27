@@ -49,25 +49,28 @@ window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
 	</div>
 	</section>
 <script type="text/javascript">
-        function logNavButtonClick(buttonName) {
-            amplitude.track('Nav Button Clicked', {
-                button_name: buttonName,
-                source: "homepage"
-            });
-        }
-
-        document.getElementById('homepage').addEventListener('click', () => logNavButtonClick("home"));
-        document.getElementById('services').addEventListener('click', () => logNavButtonClick("services"));
-        document.getElementById('courses').addEventListener('click', () => logNavButtonClick("courses"));
-        document.getElementById('about').addEventListener('click', () => logNavButtonClick("about"));
-        document.getElementById('contacts').addEventListener('click', () => logNavButtonClick("contacts"));
-
-        document.getElementById('hero-btnn').addEventListener('click', function(event) {
-            amplitude.track('Explore Services Button Clicked', {
-                button_name: "hero_btn",
-                source: "homepage"
-            });
+    // Generalized function for navigation button clicks
+    function logNavButtonClick(buttonName) {
+        amplitude.track('Nav Button Clicked', {
+            button_name: buttonName,
+            source: "homepage"
         });
-    </script>
+    }
+
+    // Add event listeners for navigation buttons
+    document.getElementById('homepage').addEventListener('click', () => logNavButtonClick("home"));
+    document.getElementById('services').addEventListener('click', () => logNavButtonClick("services"));
+    document.getElementById('courses').addEventListener('click', () => logNavButtonClick("courses"));
+    document.getElementById('about').addEventListener('click', () => logNavButtonClick("about"));
+    document.getElementById('contacts').addEventListener('click', () => logNavButtonClick("contacts"));
+
+    // Add event listener for the hero button
+    document.getElementById('hero-btnn').addEventListener('click', () => {
+        amplitude.track('Explore Services Button Clicked', {
+            button_name: "hero_btn",
+            source: "homepage"
+        });
+    });
+</script>
 </body>
 </html>
