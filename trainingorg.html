@@ -5,7 +5,14 @@
     <script>
         window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
             fetchRemoteConfig: true,
-            autocapture: false
+            autocapture: {
+		    attribution: true,
+		    pageViews: true,
+		    sessions: true,
+		    fileDownload: false,
+		    formInteractions: false,
+		    elementInteractions: false
+	    },
         });
         window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
     </script>
