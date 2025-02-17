@@ -83,23 +83,18 @@
         });
     });
 
-	amplitude.getInstance().experiment().fetch(function() {
-    let featureFlagKey = "hand-emoji-hero-btn"; // Replace with your actual feature flag key
-    let isHandEnabled = amplitude.getInstance().getFeatureFlags()['hand-emoji-hero-btn'] || false;
-
     experiment.fetch().then(() => {
-            const variant = experiment.variant("hand-emoji-hero-btn");  // The feature flag key you provided
+            const variant = experiment.variant("hand-emoji-hero-btn");  // This is my flag key from Amplitude
             
-            // Log the feature flag status to console for debugging
+            // I am logging the feature flag status to console for debugging purposes
             console.log("Feature flag status:", variant.value);
 
-            // Check if the variant is "handgesture"
+            // I am checking if the variant is "handgesture"
             if (variant.value === "handgesture") {
                 // Show the hand emoji and apply styles if variant is "handgesture"
                 document.getElementById('hero-hand').style.display = "inline-block";
-                document.getElementById('hero-hand').style.fontSize = "40px"; // Larger emoji
+                document.getElementById('hero-hand').style.fontSize = "40px";
             } else {
-                // Hide the hand emoji if the variant is not "handgesture"
                 document.getElementById('hero-hand').style.display = "none";
             }
         }).catch((error) => {
