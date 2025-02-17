@@ -87,16 +87,23 @@
     let featureFlagKey = "hand-emoji-hero-btn"; // Replace with your actual feature flag key
     let isHandEnabled = amplitude.getInstance().getFeatureFlags()['hand-emoji-hero-btn'] || false;
 
-    console.log("Feature flag status:", isHandEnabled);
-    
     experiment.fetch().then(() => {
-            const variant = experiment.variant("hand-emoji-hero-btn");
+            const variant = experiment.variant("hand-emoji-hero-btn");  // The feature flag key you provided
+            
+            // Log the feature flag status to console for debugging
+            console.log("Feature flag status:", variant.value);
+
+            // Check if the variant is "handgesture"
             if (variant.value === "handgesture") {
+                // Show the hand emoji and apply styles if variant is "handgesture"
                 document.getElementById('hero-hand').style.display = "inline-block";
-                document.getElementById('hero-hand').style.fontSize = "40px";
+                document.getElementById('hero-hand').style.fontSize = "40px"; // Larger emoji
             } else {
+                // Hide the hand emoji if the variant is not "handgesture"
                 document.getElementById('hero-hand').style.display = "none";
             }
+        }).catch((error) => {
+            console.error('Error fetching experiment:', error);
         });
 </script>
 </body>
