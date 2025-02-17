@@ -88,8 +88,13 @@
 
     console.log("Feature flag status:", isHandEnabled);
 
-    if (isHandEnabled) {
-        document.getElementById('hero-hand').style.display = "flex"; // Show the hand
+if (isHandEnabled) {
+        // Show the hand emoji and apply styles
+        document.getElementById('hero-hand').style.display = "inline-block";
+        document.getElementById('hero-hand').style.fontSize = "40px"; // Larger emoji
+    } else {
+        // If the feature flag is off, hide the emoji or apply alternative styles
+        document.getElementById('hero-hand').style.display = "none"; // Hide the hand emoji
     }
 });
 
