@@ -84,12 +84,12 @@
 
 	amplitude.getInstance().experiment().fetch(function() {
     let featureFlagKey = "hand-emoji-hero-btn"; // Replace with your actual feature flag key
-    let isHandEnabled = amplitude.getInstance().getFeatureFlags()['hero-hand'] || false;
+    let isHandEnabled = amplitude.getInstance().getFeatureFlags()['hand-emoji-hero-btn'] || false;
 
     console.log("Feature flag status:", isHandEnabled);
 
     if (isHandEnabled) {
-        document.getElementById('hero-hand').style.display = "inline"; // Show the hand
+        document.getElementById('hero-hand').style.display = "flex"; // Show the hand
     }
 });
 
