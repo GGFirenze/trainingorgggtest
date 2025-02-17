@@ -18,6 +18,7 @@
 		    elementInteractions: false
 	    },
         });
+	    const experiment = Experiment.initializeWithAmplitudeAnalytics('client-WzQxthqCE1M29epwP3jvD9krqh5gWRfn');
     </script>
 	
     <link rel="shortcut icon" type="x-icon" href="Train-IT logo(1).png">
@@ -87,17 +88,16 @@
     let isHandEnabled = amplitude.getInstance().getFeatureFlags()['hand-emoji-hero-btn'] || false;
 
     console.log("Feature flag status:", isHandEnabled);
-
-if (isHandEnabled) {
-        // Show the hand emoji and apply styles
-        document.getElementById('hero-hand').style.display = "inline-block";
-        document.getElementById('hero-hand').style.fontSize = "40px"; // Larger emoji
-    } else {
-        // If the feature flag is off, hide the emoji or apply alternative styles
-        document.getElementById('hero-hand').style.display = "none"; // Hide the hand emoji
-    }
-});
-
+    
+    experiment.fetch().then(() => {
+            const variant = experiment.variant('hand-emoji-hero-btn');
+            if (variant.value === 'on') {
+                document.getElementById('hero-hand').style.display = "inline-block";
+                document.getElementById('hero-hand').style.fontSize = "40px";
+            } else {
+                document.getElementById('hero-hand').style.display = "none";
+            }
+        });
 </script>
 </body>
 </html>
