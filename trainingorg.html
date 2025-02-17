@@ -90,8 +90,8 @@
     console.log("Feature flag status:", isHandEnabled);
     
     experiment.fetch().then(() => {
-            const variant = experiment.variant('hand-emoji-hero-btn');
-            if (variant.value === 'on') {
+            const variant = experiment.variant("hand-emoji-hero-btn");
+            if (variant.value === "handgesture") {
                 document.getElementById('hero-hand').style.display = "inline-block";
                 document.getElementById('hero-hand').style.fontSize = "40px";
             } else {
