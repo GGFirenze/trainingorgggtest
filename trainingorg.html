@@ -68,21 +68,22 @@
         });
     }
 
-    // Add event listeners for navigation buttons
+    // Here you can find event listeners for navigation buttons
     document.getElementById('homepage').addEventListener('click', () => logNavButtonClick("home"));
     document.getElementById('services').addEventListener('click', () => logNavButtonClick("services"));
     document.getElementById('courses').addEventListener('click', () => logNavButtonClick("courses"));
     document.getElementById('about').addEventListener('click', () => logNavButtonClick("about"));
     document.getElementById('contacts').addEventListener('click', () => logNavButtonClick("contacts"));
 
-    // Add event listener for the hero button
+    // Additionally, I have a hero button so I need to add an event listener for that as well
     document.getElementById('hero-btnn').addEventListener('click', () => {
         amplitude.track('Explore Services Button Clicked', {
             button_name: "hero_btn",
             source: "homepage"
         });
     });
-
+	
+//Experiment setup below
     experiment.fetch().then(() => {
             const variant = experiment.variant("hand-emoji-hero-btn");  // This is my flag key from Amplitude
             
